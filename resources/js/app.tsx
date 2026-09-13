@@ -12,16 +12,22 @@ declare global {
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
+import { AppThemeProvider } from './components/escolar/app-theme-provider';
+
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(`./pages/${name}.tsx`, import.meta.glob('./pages/**/*.tsx')),
     setup({ el, App, props }) {
         const root = createRoot(el);
 
-        root.render(<App {...props} />);
+        root.render(
+            <AppThemeProvider>
+                <App {...props} />
+            </AppThemeProvider>
+        );
     },
     progress: {
-        color: '#4B5563',
+        color: '#dc2626',
     },
 });
 
