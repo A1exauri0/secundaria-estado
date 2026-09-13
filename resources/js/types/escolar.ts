@@ -66,6 +66,19 @@ export interface Maestro {
     updated_at?: string;
 }
 
+// Interfaz para la información de un Usuario del Sistema
+export interface Usuario {
+    id: number;
+    name: string;
+    email: string;
+    rol: 'admin' | 'directivo' | 'control_escolar' | 'docente' | 'consulta';
+    telefono?: string | null;
+    estatus: 'activo' | 'inactivo';
+    avatar?: string | null;
+    created_at?: string;
+    updated_at?: string;
+}
+
 // Interfaz genérica para paginación de Laravel
 export interface PaginacionLinks {
     url: string | null;

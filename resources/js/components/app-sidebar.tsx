@@ -9,7 +9,7 @@ import {
     SidebarContent,
 } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
-import { GraduationCap, LayoutGrid, UserCheck, Users } from 'lucide-react';
+import { GraduationCap, LayoutGrid, UserCheck, UserCog, Users } from 'lucide-react';
 
 // Elementos de navegación del sistema escolar
 const itemsNavegacion: NavItem[] = [
@@ -32,6 +32,11 @@ const itemsNavegacion: NavItem[] = [
         title: 'Tutores',
         url: '/tutores',
         icon: Users,
+    },
+    {
+        title: 'Usuarios',
+        url: '/usuarios',
+        icon: UserCog,
     },
 ];
 

@@ -16,12 +16,48 @@ class EscolarSeeder extends Seeder
      */
     public function run(): void
     {
-        // 1. Crear usuario administrador de prueba si no existe
-        User::firstOrCreate(
+        // 1. Crear usuarios del sistema con diversos roles
+        User::updateOrCreate(
             ['email' => 'admin@secundaria.edu.mx'],
             [
-                'name' => 'Director Escolar',
+                'name' => 'Director Escolar - Lic. Alejandro Cruz',
                 'password' => Hash::make('password'),
+                'rol' => 'admin',
+                'telefono' => '9611234567',
+                'estatus' => 'activo',
+            ]
+        );
+
+        User::updateOrCreate(
+            ['email' => 'controlescolar@secundaria.edu.mx'],
+            [
+                'name' => 'Lic. Patricia Morales Gómez',
+                'password' => Hash::make('password'),
+                'rol' => 'control_escolar',
+                'telefono' => '9619876543',
+                'estatus' => 'activo',
+            ]
+        );
+
+        User::updateOrCreate(
+            ['email' => 'subdireccion@secundaria.edu.mx'],
+            [
+                'name' => 'Prof. Roberto Solís Ruiz',
+                'password' => Hash::make('password'),
+                'rol' => 'directivo',
+                'telefono' => '9615551234',
+                'estatus' => 'activo',
+            ]
+        );
+
+        User::updateOrCreate(
+            ['email' => 'docente.demo@secundaria.edu.mx'],
+            [
+                'name' => 'Mtro. Fernando Castillo Vera',
+                'password' => Hash::make('password'),
+                'rol' => 'docente',
+                'telefono' => '9614445678',
+                'estatus' => 'activo',
             ]
         );
 

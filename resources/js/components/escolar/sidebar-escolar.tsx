@@ -9,6 +9,7 @@ import {
     GraduationCap,
     LayoutGrid,
     UserCheck,
+    UserCog,
     Users,
     X,
 } from 'lucide-react';
@@ -40,6 +41,11 @@ const itemsNavegacion: ItemNavegacion[] = [
         titulo: 'Tutores',
         url: '/tutores',
         icono: Users,
+    },
+    {
+        titulo: 'Usuarios',
+        url: '/usuarios',
+        icono: UserCog,
     },
 ];
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MaestroController;
 use App\Http\Controllers\TutorController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return redirect()->route('dashboard');
@@ -20,6 +21,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('alumnos', AlumnoController::class)->except(['create', 'edit', 'show']);
     Route::resource('maestros', MaestroController::class)->except(['create', 'edit', 'show']);
     Route::resource('tutores', TutorController::class)->except(['create', 'edit', 'show']);
+    Route::resource('usuarios', UserController::class)->except(['create', 'edit', 'show']);
 });
 
 require __DIR__.'/settings.php';
