@@ -1,56 +1,46 @@
-import { NavFooter } from '@/components/nav-footer';
-import { NavMain } from '@/components/nav-main';
-import { NavUser } from '@/components/nav-user';
-import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
-import { type NavItem } from '@/types';
-import { Link } from '@inertiajs/react';
-import { BookOpen, Folder, LayoutGrid } from 'lucide-react';
-import AppLogo from './app-logo';
+// ==========================================
+// Barra Lateral Escolar (Sidebar)
+// ==========================================
 
-const mainNavItems: NavItem[] = [
+import React from 'react';
+import { NavMain } from '@/components/nav-main';
+import {
+    Sidebar,
+    SidebarContent,
+} from '@/components/ui/sidebar';
+import { type NavItem } from '@/types';
+import { GraduationCap, LayoutGrid, UserCheck, Users } from 'lucide-react';
+
+// Elementos de navegación del sistema escolar
+const itemsNavegacion: NavItem[] = [
     {
         title: 'Dashboard',
         url: '/dashboard',
         icon: LayoutGrid,
     },
-];
-
-const footerNavItems: NavItem[] = [
     {
-        title: 'Repository',
-        url: 'https://github.com/laravel/react-starter-kit',
-        icon: Folder,
+        title: 'Alumnos',
+        url: '/alumnos',
+        icon: GraduationCap,
     },
     {
-        title: 'Documentation',
-        url: 'https://laravel.com/docs/starter-kits',
-        icon: BookOpen,
+        title: 'Maestros y Personal',
+        url: '/maestros',
+        icon: UserCheck,
+    },
+    {
+        title: 'Tutores',
+        url: '/tutores',
+        icon: Users,
     },
 ];
 
 export function AppSidebar() {
     return (
-        <Sidebar collapsible="icon" variant="inset">
-            <SidebarHeader>
-                <SidebarMenu>
-                    <SidebarMenuItem>
-                        <SidebarMenuButton size="lg" asChild>
-                            <Link href="/dashboard" prefetch>
-                                <AppLogo />
-                            </Link>
-                        </SidebarMenuButton>
-                    </SidebarMenuItem>
-                </SidebarMenu>
-            </SidebarHeader>
-
-            <SidebarContent>
-                <NavMain items={mainNavItems} />
+        <Sidebar collapsible="icon" variant="sidebar" className="border-r border-red-950/40">
+            <SidebarContent className="pt-4">
+                <NavMain items={itemsNavegacion} />
             </SidebarContent>
-
-            <SidebarFooter>
-                <NavFooter items={footerNavItems} className="mt-auto" />
-                <NavUser />
-            </SidebarFooter>
         </Sidebar>
     );
 }

@@ -164,7 +164,7 @@ const Sidebar = React.forwardRef<
                 <SheetContent
                     data-sidebar="sidebar"
                     data-mobile="true"
-                    className="w-(--sidebar-width) bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden"
+                    className="top-16 h-[calc(100vh-4rem)] w-(--sidebar-width) bg-sidebar p-0 text-sidebar-foreground border-r border-red-950/40 [&>button]:hidden"
                     style={
                         {
                             '--sidebar-width': SIDEBAR_WIDTH_MOBILE,
@@ -172,7 +172,7 @@ const Sidebar = React.forwardRef<
                     }
                     side={side}
                 >
-                    <SheetTitle className="sr-only">Sidebar Navigation</SheetTitle>
+                    <SheetTitle className="sr-only">Navegación Escolar</SheetTitle>
                     <div className="flex h-full w-full flex-col">{children}</div>
                 </SheetContent>
             </Sheet>
@@ -191,7 +191,7 @@ const Sidebar = React.forwardRef<
             {/* This is what handles the sidebar gap on desktop */}
             <div
                 className={cn(
-                    'relative h-svh w-(--sidebar-width) bg-transparent transition-[width] duration-200 ease-linear',
+                    'relative h-[calc(100vh-4rem)] w-(--sidebar-width) bg-transparent transition-[width] duration-200 ease-linear',
                     'group-data-[collapsible=offcanvas]:w-0',
                     'group-data-[side=right]:rotate-180',
                     variant === 'floating' || variant === 'inset'
@@ -201,14 +201,14 @@ const Sidebar = React.forwardRef<
             />
             <div
                 className={cn(
-                    'fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear md:flex',
+                    'fixed top-16 bottom-0 z-20 hidden h-[calc(100vh-4rem)] w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear md:flex',
                     side === 'left'
                         ? 'left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]'
                         : 'right-0 group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]',
                     // Adjust the padding for floating and inset variants.
                     variant === 'floating' || variant === 'inset'
                         ? 'p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]'
-                        : 'group-data-[collapsible=icon]:w-(--sidebar-width-icon) group-data-[side=left]:border-r group-data-[side=right]:border-l',
+                        : 'group-data-[collapsible=icon]:w-(--sidebar-width-icon) group-data-[side=left]:border-r group-data-[side=right]:border-l border-red-950/40',
                     className,
                 )}
                 {...props}

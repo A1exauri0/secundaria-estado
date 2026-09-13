@@ -1,14 +1,27 @@
-import AppLogoIcon from './app-logo-icon';
+// ==========================================
+// Logotipo Institucional de la Escuela
+// ==========================================
+
+import React from 'react';
 
 export default function AppLogo() {
     return (
-        <>
-            <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-md">
-                <AppLogoIcon className="size-5 fill-current text-white dark:text-black" />
+        <div className="flex items-center gap-2.5">
+            <div className="flex aspect-square size-9 items-center justify-center rounded-lg bg-white p-0.5 shadow-sm">
+                <img
+                    src="/images/logo-secundaria.png"
+                    alt="Escuela Secundaria del Estado"
+                    className="size-full object-contain"
+                />
             </div>
-            <div className="ml-1 grid flex-1 text-left text-sm">
-                <span className="mb-0.5 truncate leading-none font-semibold">Laravel Starter Kit</span>
+            <div className="grid flex-1 text-left text-sm leading-tight">
+                <span className="truncate font-bold text-white tracking-tight">
+                    Secundaria del Estado
+                </span>
+                <span className="truncate text-xs font-semibold text-red-200">
+                    Turno Matutino
+                </span>
             </div>
-        </>
+        </div>
     );
 }
